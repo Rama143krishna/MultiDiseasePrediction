@@ -1,0 +1,311 @@
+/* ======================================================
+   Multi Disease Prediction System - Premium CSS UI
+   ====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:#fff;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* Animated Background */
+.bg-animation{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,255,255,.12), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(255,0,140,.12), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,0,.08), transparent 20%);
+    animation:floatBg 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg{
+    from{transform:scale(1) translateY(0);}
+    to{transform:scale(1.08) translateY(-20px);}
+}
+
+/* Header */
+.main-header{
+    text-align:center;
+    padding:30px 20px 10px;
+}
+
+.main-header h1{
+    font-size:2.5rem;
+    font-weight:700;
+    background:linear-gradient(90deg,#00f5ff,#ff00aa,#ffe600);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 20px rgba(255,255,255,.15);
+}
+
+.main-header p{
+    margin-top:8px;
+    color:#d7d7d7;
+    font-size:1rem;
+}
+
+/* Dashboard Layout */
+.dashboard{
+    width:95%;
+    max-width:1500px;
+    margin:25px auto 40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+    gap:28px;
+}
+
+/* Cards */
+.card{
+    backdrop-filter:blur(16px);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35),
+        inset 0 0 0 1px rgba(255,255,255,.03);
+    transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.01);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.45),
+        0 0 30px rgba(0,255,255,.08);
+}
+
+.diabetes-card{
+    border-top:4px solid #00e5ff;
+}
+
+.cardio-card{
+    border-top:4px solid #ff3d81;
+}
+
+.card h2{
+    text-align:center;
+    margin-bottom:22px;
+    font-size:1.55rem;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+/* Inputs */
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.form-grid input{
+    width:100%;
+    padding:14px 14px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    font-size:.95rem;
+    transition:all .25s ease;
+    border:1px solid transparent;
+}
+
+.form-grid input::placeholder{
+    color:#d2d2d2;
+}
+
+.form-grid input:focus{
+    transform:translateY(-1px);
+    border-color:rgba(255,255,255,.35);
+    background:rgba(255,255,255,0.18);
+}
+
+/* Buttons */
+.btn{
+    width:100%;
+    margin-top:18px;
+    padding:15px 18px;
+    border:none;
+    border-radius:16px;
+    color:#fff;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    letter-spacing:.4px;
+    transition:all .3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:120%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+    transition:left .6s ease;
+}
+
+.btn:hover::before{
+    left:120%;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+
+.btn-diabetes{
+    background:linear-gradient(135deg,#00c6ff,#0072ff);
+    box-shadow:0 10px 25px rgba(0,114,255,.35);
+}
+
+.btn-cardio{
+    background:linear-gradient(135deg,#ff416c,#ff4b2b);
+    box-shadow:0 10px 25px rgba(255,75,43,.35);
+}
+
+/* Result Box */
+.result-box{
+    margin-top:18px;
+    min-height:78px;
+    padding:18px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.09);
+    border:1px solid rgba(255,255,255,0.12);
+    text-align:center;
+    font-size:1rem;
+    line-height:1.55;
+    transition:all .3s ease;
+}
+
+.percent{
+    font-size:1.35rem;
+    font-weight:700;
+    color:#ffe600;
+}
+
+/* Glow Success */
+.success-glow{
+    box-shadow:0 0 18px rgba(0,255,140,.6);
+}
+
+/* Canvas */
+canvas{
+    margin-top:18px;
+    width:100% !important;
+    max-height:280px;
+    background:rgba(255,255,255,0.04);
+    border-radius:18px;
+    padding:10px;
+}
+
+/* Footer */
+.footer{
+    text-align:center;
+    padding:16px;
+    color:#d0d0d0;
+    font-size:.92rem;
+}
+
+/* Loader */
+.loader{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    border:3px solid rgba(255,255,255,.25);
+    border-top-color:#fff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-right:8px;
+    vertical-align:middle;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg);}
+}
+
+/* Toast */
+.toast{
+    position:fixed;
+    right:22px;
+    top:22px;
+    padding:14px 18px;
+    border-radius:14px;
+    color:#fff;
+    font-weight:600;
+    opacity:0;
+    transform:translateY(-20px);
+    transition:all .45s ease;
+    z-index:9999;
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+    backdrop-filter:blur(10px);
+}
+
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.toast.info{
+    background:linear-gradient(135deg,#2193b0,#6dd5ed);
+}
+
+.toast.success{
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+}
+
+.toast.error{
+    background:linear-gradient(135deg,#ff512f,#dd2476);
+}
+
+/* Responsive */
+@media (max-width:900px){
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .main-header h1{
+        font-size:2rem;
+    }
+
+    .card{
+        padding:22px;
+    }
+}
+
+@media (max-width:500px){
+    .main-header h1{
+        font-size:1.7rem;
+    }
+
+    .main-header p{
+        font-size:.9rem;
+    }
+
+    .toast{
+        left:12px;
+        right:12px;
+        top:12px;
+    }
+}
